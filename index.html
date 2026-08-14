@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B0B0C;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#111;text-decoration:none}
+a:hover{color:#111;opacity:.7}
+@keyframes apDrift{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+@keyframes apNudge{0%,88%,100%{transform:translateY(0)}94%{transform:translateY(6px)}}
+@keyframes apMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes apSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes apConic{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes apPulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes apGrain{0%{transform:translate(0,0)}25%{transform:translate(-2%,1%)}50%{transform:translate(1%,-2%)}75%{transform:translate(-1%,-1%)}100%{transform:translate(0,0)}}
+html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
+[data-sticky]{transform:translateY(-110%)}
+[data-sticky][data-past]{transform:translateY(0)}
+[data-sticky][data-off]{display:none}
+@media (prefers-reduced-motion:reduce){[data-mq],[data-seal],[data-drift],[data-conic],[data-grain],[data-pulse]{animation:none!important}}
+</style>
+<script src="./apolo-rig.js"></script>
+</helmet>
+
+<div style="position:relative;min-height:100vh;overflow-x:hidden;background:#0B0B0C">
+
+  <div data-grain aria-hidden="true" style="position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.05;background-image:repeating-conic-gradient(rgba(255,255,255,.5) 0 25%,transparent 0 50%);background-size:3px 3px"></div>
+
+  <div aria-hidden="true" style="position:fixed;top:0;left:0;right:0;height:3px;z-index:60;pointer-events:none">
+    <div data-progress style="height:100%;background:linear-gradient(90deg,#FF3B24,#C1121F);transform:scaleX(0);transform-origin:0 50%;will-change:transform"></div>
+  </div>
+
+  <div data-sticky style="position:fixed;top:3px;left:0;right:0;z-index:50;background:rgba(11,11,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;transition:transform .38s cubic-bezier(.22,1,.36,1)">
+    <div style="display:flex;align-items:flex-end;font-family:'Poppins',sans-serif;font-weight:600;font-size:20px;letter-spacing:-.03em;color:#FF3B24;line-height:1">
+      <span style="margin-right:.035em">App</span>
+      <span data-eye style="position:relative;width:.72em;height:.72em;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 .07em #111;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;margin-bottom:.06em">
+        <span data-pupil style="width:.42em;height:.42em;border-radius:50%;background:#111;will-change:transform"></span>
+      </span>
+      <span>L</span>
+      <span data-eye style="position:relative;width:.72em;height:.72em;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 .07em #111;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;margin-bottom:.06em">
+        <span data-pupil style="width:.42em;height:.42em;border-radius:50%;background:#111;will-change:transform"></span>
+      </span>
+      <span style="margin-left:-.035em">web</span>
+    </div>
+    <a href="{{ aturnoUrl }}" target="_blank" data-excite style="flex:none;background:#E10600;color:#fff;font-weight:700;font-size:13px;padding:11px 18px;border-radius:999px;white-space:nowrap;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-1px);box-shadow:0 0 0 4px rgba(225,6,0,.22);opacity:1;color:#fff">Contactate</a>
+  </div>
+
+  <!-- HERO -->
+  <section style="background:#E10600;min-height:100vh;box-sizing:border-box;padding:34vh 22px 10vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;gap:34px">
+
+    <div style="display:flex;align-items:flex-end;justify-content:center;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(46px,13vw,120px);letter-spacing:-.03em;line-height:1;color:#fff;user-select:none">
+      <span style="margin-right:.035em">App</span>
+      <span style="position:relative;display:inline-flex;flex-direction:column;align-items:center;margin-bottom:.02em">
+        <span data-brow style="width:.34em;height:.1em;border-radius:999px;background:#111;margin-bottom:.06em;will-change:transform"></span>
+        <span data-eye style="position:relative;width:.72em;height:.72em;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 .055em #111;overflow:hidden;display:inline-flex;align-items:center;justify-content:center">
+          <span data-pupil style="width:.44em;height:.44em;border-radius:50%;background:#111;will-change:transform"></span>
+        </span>
+      </span>
+      <span>L</span>
+      <span style="position:relative;display:inline-flex;flex-direction:column;align-items:center;margin-bottom:.02em">
+        <span data-brow style="width:.34em;height:.1em;border-radius:999px;background:#111;margin-bottom:.06em;will-change:transform"></span>
+        <span data-eye style="position:relative;width:.72em;height:.72em;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 .055em #111;overflow:hidden;display:inline-flex;align-items:center;justify-content:center">
+          <span data-pupil style="width:.44em;height:.44em;border-radius:50%;background:#111;will-change:transform"></span>
+        </span>
+      </span>
+      <span style="margin-left:-.035em">web</span>
+    </div>
+
+    <p style="margin:0;max-width:640px;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(20px,5vw,32px);line-height:1.22;letter-spacing:-.02em;color:#fff;text-wrap:pretty">Construimos productos propios.<br><span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;letter-spacing:0">Y también los tuyos.</span></p>
+
+    <a href="{{ aturnoUrl }}" target="_blank" data-excite style="display:inline-flex;align-items:center;gap:10px;background:#111;color:#fff;font-weight:700;font-size:17px;padding:19px 34px;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.22);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s" style-hover="transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.3),0 0 0 6px rgba(17,17,17,.1);opacity:1;color:#FF3B24">Contactate con nosotros <span style="font-size:19px">→</span></a>
+
+    <span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.85">Sin compromiso · Respuesta en 24 h</span>
+    <div style="display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:center;max-width:620px;padding-top:12px;border-top:1px solid rgba(255,255,255,.3)">
+      <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.82">Productos propios</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em;color:#fff;opacity:.92"><span data-pulse style="width:6px;height:6px;border-radius:50%;background:#111;animation:apPulse 2.2s ease-in-out infinite"></span>Aturno</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em;color:#fff;opacity:.92"><span data-pulse style="width:6px;height:6px;border-radius:50%;background:#B23A16;animation:apPulse 2.2s ease-in-out .8s infinite"></span>Row7</span>
+    </div>
+    <span aria-hidden="true" style="font-family:'DM Mono',monospace;font-size:30px;line-height:1;color:#fff;opacity:.82;animation:apNudge 3.4s ease-in-out infinite">↓</span>
+  </section>
+
+  <!-- TICKER -->
+  <div style="background:#0B0B0C;overflow:hidden;padding:18px 0;border-top:2px solid #FF3B24;border-bottom:1px solid rgba(255,255,255,.12)">
+    <div data-mq style="display:flex;width:max-content;animation:apMarquee 52s linear infinite;will-change:transform">
+      <div style="display:flex;align-items:center;gap:38px;padding-right:38px;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(22px,5vw,38px);letter-spacing:-.03em;color:#FF3B24;white-space:nowrap">
+        <span>Estrategia</span><span style="color:#C1121F">✳</span>
+        <span style="-webkit-text-stroke:1.2px #FF3B24;color:transparent">Diseño</span><span style="color:#C1121F">✳</span>
+        <span>Código</span><span style="color:#C1121F">✳</span>
+        <span style="-webkit-text-stroke:1.2px #FF3B24;color:transparent">Growth</span><span style="color:#C1121F">✳</span>
+      </div>
+      <div aria-hidden="true" style="display:flex;align-items:center;gap:38px;padding-right:38px;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(22px,5vw,38px);letter-spacing:-.03em;color:#FF3B24;white-space:nowrap">
+        <span>Estrategia</span><span style="color:#C1121F">✳</span>
+        <span style="-webkit-text-stroke:1.2px #FF3B24;color:transparent">Diseño</span><span style="color:#C1121F">✳</span>
+        <span>Código</span><span style="color:#C1121F">✳</span>
+        <span style="-webkit-text-stroke:1.2px #FF3B24;color:transparent">Growth</span><span style="color:#C1121F">✳</span>
+      </div>
+      <div aria-hidden="true" style="display:flex;align-items:center;gap:38px;padding-right:38px;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(22px,5vw,38px);letter-spacing:-.03em;color:#FF3B24;white-space:nowrap">
+        <span>Estrategia</span><span style="color:#C1121F">✳</span>
+        <span style="-webkit-text-stroke:1.2px #FF3B24;color:transparent">Diseño</span><span style="color:#C1121F">✳</span>
+        <span>Código</span><span style="color:#C1121F">✳</span>
+        <span style="-webkit-text-stroke:1.2px #FF3B24;color:transparent">Growth</span><span style="color:#C1121F">✳</span>
+      </div>
+      <div aria-hidden="true" style="display:flex;align-items:center;gap:38px;padding-right:38px;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(22px,5vw,38px);letter-spacing:-.03em;color:#FF3B24;white-space:nowrap">
+        <span>Estrategia</span><span style="color:#C1121F">✳</span>
+        <span style="-webkit-text-stroke:1.2px #FF3B24;color:transparent">Diseño</span><span style="color:#C1121F">✳</span>
+        <span>Código</span><span style="color:#C1121F">✳</span>
+        <span style="-webkit-text-stroke:1.2px #FF3B24;color:transparent">Growth</span><span style="color:#C1121F">✳</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANIFIESTO -->
+  <section data-reveal data-spot style="position:relative;background:#0B0B0C;color:#fff;padding:118px 22px 100px;overflow:hidden;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.09) 1px,transparent 0);background-size:26px 26px">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(340px circle at var(--mx,50%) var(--my,30%),rgba(225,6,0,.16),transparent 72%)"></div>
+    <div style="position:relative;max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:30px">
+      <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#FF3B24;border:1px solid rgba(225,6,0,.35);border-radius:999px;padding:8px 14px">01 — Qué es Appoloweb</span>
+      <h2 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(32px,8.6vw,78px);line-height:.96;letter-spacing:-.045em;text-wrap:pretty">No es una agencia que hace webs por encargo. Somos un <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;letter-spacing:-.01em;background:linear-gradient(100deg,#FF3B24,#C1121F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">product house</span>: construimos productos para resolver problemas que nos importan.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.16)">
+        <p style="margin:0;font-size:clamp(16px,4vw,19px);line-height:1.6;color:rgba(255,255,255,.7)">Cada producto propio nace de una frustración real: algo que ya existe y funciona peor de lo que podría. Lo desarmamos, lo repensamos y lo usamos nosotros primero.</p>
+        <p style="margin:0;font-size:clamp(16px,4vw,19px);line-height:1.6;font-weight:700;color:#FF3B24">Cuando el producto es tuyo, aplicamos el mismo criterio: estrategia, diseño, código — y lo que viene después del lanzamiento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS PROPIOS -->
+  <section data-reveal style="background:#FAF8F3;padding:104px 22px 108px">
+    <div style="max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <h2 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,7.6vw,64px);line-height:.98;letter-spacing:-.045em;color:#111;max-width:620px;text-wrap:pretty">Productos <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic">propios</span></h2>
+      <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#111;opacity:.45">02 — Lo que construí</span>
+    </div>
+
+    <div style="max-width:1000px;margin:56px auto 0;display:flex;flex-direction:column;gap:68px">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="2">
+        <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px 48px;align-items:start;padding-top:34px;border-top:2px solid #111">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+              <span style="display:inline-flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:#E10600;padding:6px 11px;border-radius:999px"><span data-pulse style="width:6px;height:6px;border-radius:50%;background:#111;animation:apPulse 2.2s ease-in-out infinite"></span>{{ p.status }}</span>
+              <span style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#111;opacity:.5">{{ p.kind }}</span>
+            </div>
+            <h3 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(38px,10vw,84px);line-height:.9;letter-spacing:-.05em;color:#111">{{ p.name }}</h3>
+            <p style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(18px,4.4vw,25px);line-height:1.22;letter-spacing:-.025em;color:#111;text-wrap:pretty">{{ p.line }}</p>
+            <div style="display:flex;flex-direction:column;gap:16px;padding-top:18px;border-top:1px solid rgba(17,17,17,.18)">
+              <div>
+                <span style="display:block;margin-bottom:6px;font-family:'DM Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#FF9E93">El problema</span>
+                <p style="margin:0;font-size:clamp(15.5px,3.9vw,17.5px);line-height:1.6;color:#111;opacity:.78">{{ p.problem }}</p>
+              </div>
+              <div>
+                <span style="display:block;margin-bottom:6px;font-family:'DM Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#111;opacity:.45">Cómo lo resuelvo</span>
+                <p style="margin:0;font-size:clamp(15.5px,3.9vw,17.5px);line-height:1.6;color:#111;opacity:.78">{{ p.solution }}</p>
+              </div>
+            </div>
+          </div>
+          <div data-spot role="img" aria-label="{{ p.shotAlt }}" style="position:relative;width:100%;aspect-ratio:1.6;border-radius:24px;overflow:hidden;background-color:#0B0B0C;background-position:center;background-repeat:no-repeat;background-size:cover;background-image:url('{{ p.shot }}');box-shadow:0 24px 60px rgba(17,17,17,.16);transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s" style-hover="transform:translateY(-6px);box-shadow:0 34px 80px rgba(17,17,17,.24)"></div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ASÍ TRABAJO -->
+  <section data-reveal data-spot style="position:relative;background:#0B0B0C;color:#fff;padding:104px 22px 108px;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,20%),rgba(225,6,0,.12),transparent 72%)"></div>
+    <div style="position:relative;max-width:1000px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px">
+        <h2 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,7.6vw,64px);line-height:.98;letter-spacing:-.045em;max-width:660px;text-wrap:pretty">Así <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;color:#FF3B24">trabajamos</span> cuando el producto es tuyo</h2>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#FF3B24;opacity:.8">03 — Cómo trabajamos</span>
+      </div>
+      <p style="margin:0 0 50px;max-width:560px;font-size:clamp(16px,4vw,18px);line-height:1.6;color:rgba(255,255,255,.68)">El mismo criterio que usamos en Aturno y Row7, aplicado a lo tuyo. Sin intermediarios: hablás con nosotros, y quien te responde es quien programa.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:rgba(255,255,255,.14);border-radius:20px;overflow:hidden">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div style="background:#0B0B0C;padding:30px 24px 34px;display:flex;flex-direction:column;gap:12px;min-height:255px;transition:background .35s,color .35s" style-hover="background:#E10600;color:#fff">
+            <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:56px;line-height:.88;letter-spacing:-.055em;color:#FF3B24;mix-blend-mode:difference">{{ s.n }}</span>
+            <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.6">{{ s.when }}</span>
+            <h3 style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:22px;line-height:1.12;letter-spacing:-.02em">{{ s.title }}</h3>
+            <p style="margin:auto 0 0;font-size:15.5px;line-height:1.55;opacity:.72">{{ s.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section data-reveal style="background:#FAF8F3;padding:96px 22px 100px">
+    <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+        <h2 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,7.6vw,64px);line-height:.98;letter-spacing:-.045em;color:#111;max-width:620px;text-wrap:pretty">Testimonios: <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic">en camino</span></h2>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#111;opacity:.45">04 — Testimonios</span>
+      </div>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:20px;padding:44px 38px 46px;border-radius:24px;background:#fff;border:1px solid rgba(17,17,17,.1);box-shadow:0 2px 20px rgba(17,17,17,.07)">
+        <span style="font-family:'Instrument Serif',serif;font-size:64px;line-height:.4;color:#FF3B24">“</span>
+        <blockquote style="margin:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(20px,5vw,34px);line-height:1.2;letter-spacing:-.03em;color:#111;max-width:780px;text-wrap:pretty">Mientras tanto, confiá en que si no funcionara, no lo estaríamos usando nosotros mismos.</blockquote>
+        <figcaption style="display:flex;align-items:center;gap:10px;padding-top:18px;border-top:1px solid rgba(17,17,17,.12);font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#111;opacity:.55"><span data-pulse style="width:6px;height:6px;border-radius:50%;background:#E10600;animation:apPulse 2.2s ease-in-out infinite"></span>Aturno corre nuestra propia agenda</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- QUIÉN SOY -->
+  <section data-reveal style="position:relative;background:#E10600;padding:100px 22px;overflow:hidden">
+    <div data-seal style="position:absolute;top:44px;right:-60px;width:210px;height:210px;animation:apSpin 24s linear infinite;pointer-events:none;opacity:.4">
+      <svg viewBox="0 0 100 100" style="width:100%;height:100%">
+        <defs><path id="apCircle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"></path></defs>
+        <text style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.28em;fill:#fff"><textPath href="#apCircle">PRODUCT HOUSE · BUENOS AIRES · </textPath></text>
+      </svg>
+    </div>
+    <div style="position:relative;max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));align-items:center;gap:48px">
+      <img data-drift src="./assets/portfolio/retrato.jpg" alt="Retrato de Matías Caló" style="display:block;width:100%;height:clamp(300px,58vw,430px);object-fit:cover;border-radius:26px;box-shadow:0 24px 60px rgba(0,0,0,.32);animation:apDrift 6s ease-in-out infinite">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#fff;opacity:.92">05 — Quién está detrás</span>
+        <h2 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,7.2vw,56px);line-height:.98;letter-spacing:-.045em;color:#fff;text-wrap:pretty">{{ founderName }}</h2>
+        <p style="margin:0;font-size:clamp(16px,4vw,19px);line-height:1.6;color:#fff;opacity:.92">23 años, argentino. Mitad artista, mitad números. Programo, hago música como <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:1.06em;border-bottom:2px solid #B23A16">Fontane</span>, y me divierte encontrar la forma de que algo que ya existe genere más valor y se disfrute más.</p>
+        <p style="margin:0;font-size:clamp(16px,4vw,19px);line-height:1.6;color:#fff;opacity:.92">Construyo por el placer de construir, no para cerrar un ticket. Y lo que más me gusta es tomar algo ineficiente o anticuado y dejarlo tan simple que se sienta casi mágico.</p>
+        <a href="{{ portfolioUrl }}" style="align-self:flex-start;margin-top:6px;display:inline-flex;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#FF3B24;background:#111;padding:14px 20px;border-radius:999px;transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,255,255,.28);opacity:1;color:#FF3B24">Ver portfolio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="empezar" data-reveal data-spot style="position:relative;background:#0B0B0C;color:#fff;padding:104px 22px 112px;overflow:hidden;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.08) 1px,transparent 0);background-size:26px 26px">
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(380px circle at var(--mx,50%) var(--my,40%),rgba(225,6,0,.14),transparent 72%)"></div>
+    <div style="position:relative;max-width:820px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
+      <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#FF3B24;opacity:.8">06 — Empecemos</span>
+      <h2 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(34px,9vw,76px);line-height:.95;letter-spacing:-.05em;color:#fff;text-wrap:pretty">Contame qué querés <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;background:linear-gradient(100deg,#FF3B24,#C1121F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">construir</span></h2>
+      <p style="margin:0;max-width:470px;font-size:clamp(16px,4vw,18px);line-height:1.6;color:rgba(255,255,255,.68)">30 minutos, sin costo. Salís con alcance, plazo y la métrica a mover.</p>
+
+      <p style="margin:2px 0 0;display:inline-flex;align-items:center;gap:9px;max-width:520px;font-family:'DM Mono',monospace;font-size:12.5px;line-height:1.6;color:#FF3B24;border:1px solid rgba(225,6,0,.3);border-radius:999px;padding:11px 18px"><span data-pulse style="flex:none;width:6px;height:6px;border-radius:50%;background:#FF3B24;animation:apPulse 2.2s ease-in-out infinite"></span>El widget de acá abajo es Aturno. Nos pareció raro agendar con la herramienta de otro.</p>
+
+      <div style="position:relative;margin-top:10px;width:100%;padding:2px;border-radius:26px;overflow:hidden;background:rgba(255,255,255,.14)">
+        <div data-conic aria-hidden="true" style="position:absolute;top:50%;left:50%;width:150%;aspect-ratio:1;background:conic-gradient(from 0deg,transparent 0 62%,#FF3B24 80%,#C1121F 92%,transparent 100%);animation:apConic 7s linear infinite;pointer-events:none"></div>
+        <div data-slot style="position:relative;box-sizing:border-box;min-height:420px;border-radius:24px;background:#FAF8F3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:28px;text-align:center">
+          <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#111;opacity:.5">Widget de reservas · Aturno</span>
+          <span style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(20px,4.6vw,26px);letter-spacing:-.02em;color:#111">Elegí día y horario</span>
+          <span style="font-size:14.5px;line-height:1.6;color:#111;opacity:.6;max-width:340px">Acá va embebido el widget de Aturno (iframe). Mientras tanto, el botón abre tu página de reservas.</span>
+          <a href="{{ aturnoUrl }}" target="_blank" style="margin-top:12px;background:#111;color:#FF3B24;font-weight:700;font-size:16px;padding:17px 28px;border-radius:999px;transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-2px);box-shadow:0 14px 32px rgba(17,17,17,.3);opacity:1;color:#FF3B24">Ver horarios disponibles →</a>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:14px">
+        <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45)">¿Todavía no querés reservar media hora?</span>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+          <a href="{{ mailtoUrl }}" style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:14px 22px;font-weight:700;font-size:15px;color:#fff;transition:border-color .3s,transform .3s,background .3s" style-hover="border-color:#FF3B24;background:rgba(225,6,0,.08);transform:translateY(-2px);opacity:1;color:#fff">Escribinos un mail</a>
+          <a href="{{ whatsappUrl }}" target="_blank" style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:14px 22px;font-weight:700;font-size:15px;color:#fff;transition:border-color .3s,transform .3s,background .3s" style-hover="border-color:#FF3B24;background:rgba(225,6,0,.08);transform:translateY(-2px);opacity:1;color:#fff">Mandanos un WhatsApp</a>
+        </div>
+        <span style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.5);max-width:380px;text-align:center">Contanos en dos líneas qué tenés en mente y te respondemos en 24 h.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0B0B0C;color:#fff;padding:56px 22px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between">
+    <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,8vw,68px);line-height:.9;letter-spacing:-.05em;color:#FF3B24">Appoloweb</span>
+    <span style="font-family:'DM Mono',monospace;font-size:12px;line-height:1.7;color:rgba(255,255,255,.55)">hola@appoloweb.com<br>Buenos Aires, AR</span>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;founderName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Matías Caló&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contenido&quot;},&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hola@appoloweb.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;5491100000000&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;aturnoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://aturno.app&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;portfolioUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;./portfolio.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;eyeFollow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;},&quot;scrollReveal&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;},&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    window.__apoloOpts = {
+      eyeFollow: this.props.eyeFollow !== false,
+      scrollReveal: this.props.scrollReveal !== false,
+      stickyCta: this.props.stickyCta !== false
+    };
+  }
+
+  renderVals() {
+    return {
+      aturnoUrl: this.props.aturnoUrl || 'https://aturno.app',
+      portfolioUrl: this.props.portfolioUrl || './portfolio.html',
+      mailtoUrl: 'mailto:' + (this.props.email || 'hola@appoloweb.com') + '?subject=Quiero%20construir%20algo',
+      whatsappUrl: 'https://wa.me/' + String(this.props.whatsapp || '5491100000000').replace(/[^0-9]/g, ''),
+      founderName: this.props.founderName || 'Tu nombre',
+      products: [
+        {
+          name: 'Aturno',
+          kind: 'Producto propio · Web + WhatsApp',
+          status: 'MVP iterando',
+          line: 'Gestión de turnos para centros médicos, con un asistente de WhatsApp que atiende con IA.',
+          problem: 'Conseguir un turno es un caos: llamados que nadie contesta, agendas en papel y pacientes que se pierden en el camino.',
+          solution: 'Una plataforma donde el consultorio ve todo en un lugar, y un asistente de WhatsApp que agenda, recuerda y reprograma solo.',
+          shot: './assets/portfolio/aturno-landing2.png',
+          shotAlt: 'La landing de Aturno, con el asistente de WhatsApp confirmando un turno.'
+        },
+        {
+          name: 'Row7',
+          kind: 'Producto propio · Para cines',
+          status: 'En proceso',
+          line: 'Rediseño completo de la experiencia de comprar una entrada de cine.',
+          problem: 'Amo ir al cine, pero comprar la entrada sigue siendo lo peor del plan: interfaces viejas, pasos de más y butacas que se eligen a ciegas.',
+          solution: 'Cartelera, butacas y pago en un flujo corto, y cada cine lo personaliza a su gusto: no es un molde igual para todos.',
+          shot: './assets/portfolio/cinema-home.png',
+          shotAlt: 'La cartelera de Row7 con el estreno de la semana y sus funciones.'
+        }
+      ],
+      steps: [
+        { n: '1', when: 'Antes de cotizar', title: 'Entender', body: 'Qué problema hay atrás del pedido, y a quién le duele.' },
+        { n: '2', when: 'La parte más barata', title: 'Decidir qué no', body: 'La mitad de lo que se pide no hay que construirlo. Eso lo definimos primero.' },
+        { n: '3', when: 'Usable desde temprano', title: 'Construir', body: 'Lo ves funcionando mucho antes de que esté terminado.' },
+        { n: '4', when: 'Lanzar no es terminar', title: 'Seguir', body: 'Los productos se arreglan con uso real, no con reuniones.' }
+      ],
+      pillars: [
+        { n: '01', title: 'Estrategia', body: 'Qué construir y qué métrica tiene que moverse.' },
+        { n: '02', title: 'Diseño', body: 'Prototipos navegables, testeados antes de escribir código.' },
+        { n: '03', title: 'Desarrollo', body: 'Web y mobile. Código documentado, y es tuyo.' },
+        { n: '04', title: 'Growth', body: 'Analítica y experimentos después del deploy.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
