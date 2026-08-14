@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Appoloweb — Construimos productos propios. Y también los tuyos.</title>
 <meta name="description" content="No es una agencia que hace webs por encargo. Appoloweb es un product house: construimos productos propios para resolver problemas que nos importan, y aplicamos el mismo criterio cuando el producto es tuyo.">
-<link rel="canonical" href="https://mati2108.github.io/appoloweb/">
+<link rel="canonical" href="https://appoloweb.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Appoloweb">
 <meta property="og:locale" content="es_AR">
-<meta property="og:url" content="https://mati2108.github.io/appoloweb/">
+<meta property="og:url" content="https://appoloweb.vercel.app/">
 <meta property="og:title" content="Appoloweb — Construimos productos propios. Y también los tuyos.">
 <meta property="og:description" content="No es una agencia que hace webs por encargo. Appoloweb es un product house: construimos productos propios para resolver problemas que nos importan, y aplicamos el mismo criterio cuando el producto es tuyo.">
-<meta property="og:image" content="https://mati2108.github.io/appoloweb/assets/og-appoloweb.png">
-<meta property="og:image:secure_url" content="https://mati2108.github.io/appoloweb/assets/og-appoloweb.png">
+<meta property="og:image" content="https://appoloweb.vercel.app/assets/og-appoloweb.png">
+<meta property="og:image:secure_url" content="https://appoloweb.vercel.app/assets/og-appoloweb.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -280,7 +280,7 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;founderName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Matías Caló&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contenido&quot;},&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hola@appoloweb.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;5491100000000&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;aturnoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://aturno.app&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;portfolioUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;./portfolio.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;eyeFollow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;},&quot;scrollReveal&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;},&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;founderName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Matías Caló&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contenido&quot;},&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hola@appoloweb.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;5491100000000&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;aturnoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://aturno.app&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;portfolioUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;./portfolio&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;eyeFollow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;},&quot;scrollReveal&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;},&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Comportamiento&quot;}}">
 class Component extends DCLogic {
   componentDidMount() {
     window.__apoloOpts = {
@@ -293,7 +293,7 @@ class Component extends DCLogic {
   renderVals() {
     return {
       aturnoUrl: this.props.aturnoUrl || 'https://aturno.app',
-      portfolioUrl: this.props.portfolioUrl || './portfolio.html',
+      portfolioUrl: this.props.portfolioUrl || './portfolio',
       mailtoUrl: 'mailto:' + (this.props.email || 'hola@appoloweb.com') + '?subject=Quiero%20construir%20algo',
       whatsappUrl: 'https://wa.me/' + String(this.props.whatsapp || '5491100000000').replace(/[^0-9]/g, ''),
       founderName: this.props.founderName || 'Tu nombre',
