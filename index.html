@@ -45,7 +45,14 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
 [data-sticky][data-off]{display:none}
 @media (prefers-reduced-motion:reduce){[data-mq],[data-seal],[data-drift],[data-conic],[data-grain],[data-pulse]{animation:none!important}}
 
-/* --- mobile (agregado a mano) --- */
+/* --- mobile (agregado a mano, NO viene del editor visual) ---
+   Todo el comportamiento en pantallas chicas sale de este bloque.
+   Apunta a los valores inline de cada elemento, por eso cada regla
+   aparece dos veces: React reescribe el atributo style agregando un
+   espacio despues de los dos puntos (font-size: 11px), asi que hay
+   que cubrir las dos formas.
+   Si regeneras esta pagina desde el editor visual, esto se pierde.
+   Borrando el bloque, el sitio vuelve exactamente a como estaba. */
 @media (max-width:640px){
   [style*="font-size:10.5px"],[style*="font-size: 10.5px"]{font-size:12px!important}
   [style*="font-size:11px"],[style*="font-size: 11px"]{font-size:12.5px!important}
