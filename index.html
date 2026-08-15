@@ -44,6 +44,18 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
 [data-sticky][data-past]{transform:translateY(0)}
 [data-sticky][data-off]{display:none}
 @media (prefers-reduced-motion:reduce){[data-mq],[data-seal],[data-drift],[data-conic],[data-grain],[data-pulse]{animation:none!important}}
+
+/* --- mobile (agregado a mano) --- */
+@media (max-width:640px){
+  [style*="font-size:10.5px"],[style*="font-size: 10.5px"]{font-size:12px!important}
+  [style*="font-size:11px"],[style*="font-size: 11px"]{font-size:12.5px!important}
+  [style*="font-size:11.5px"],[style*="font-size: 11.5px"]{font-size:13px!important}
+  [style*="font-size:12px"],[style*="font-size: 12px"]{font-size:13px!important}
+  [style*="font-size:12.5px"],[style*="font-size: 12.5px"]{font-size:13.5px!important}
+  a[href="./"],[data-sticky] a,[data-excite]{min-height:46px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+  a[style*="display:inline-flex"],a[style*="display: inline-flex"]{min-height:46px;box-sizing:border-box;align-items:center}
+  a[style*="display:flex"],a[style*="display: flex"],a[style*="display:grid"],a[style*="display: grid"]{min-height:46px;box-sizing:border-box}
+}
 </style>
 <script src="./apolo-rig.js"></script>
 </helmet>
