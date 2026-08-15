@@ -53,6 +53,22 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
   a[href="./"],[data-sticky] a,[data-excite]{min-height:46px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
   a[style*="display:inline-flex"],a[style*="display: inline-flex"]{min-height:46px;box-sizing:border-box;align-items:center}
   a[style*="display:flex"],a[style*="display: flex"],a[style*="display:grid"],a[style*="display: grid"]{min-height:46px;box-sizing:border-box}
+
+  /* secciones mas compactas en telefono (sin tocar el hero de 100vh) */
+  section[style*="px 22px "]:not([style*="100vh"]){padding-top:58px!important;padding-bottom:58px!important}
+  /* aire interno proporcional a la pantalla */
+  [style*="gap:28px"],[style*="gap: 28px"]{gap:20px!important}
+  [style*="gap:30px"],[style*="gap: 30px"]{gap:20px!important}
+  [style*="gap:32px"],[style*="gap: 32px"]{gap:22px!important}
+  [style*="gap:34px"],[style*="gap: 34px"]{gap:22px!important}
+  [style*="gap:38px"],[style*="gap: 38px"]{gap:24px!important}
+  [style*="gap:40px"],[style*="gap: 40px"]{gap:26px!important}
+  [style*="gap:44px"],[style*="gap: 44px"]{gap:28px!important}
+  [style*="gap:72px"],[style*="gap: 72px"]{gap:36px!important}
+  /* pills mas compactos: entran mas por fila y bajan el largo total */
+  span[style*="border-radius:999px"],span[style*="border-radius: 999px"]{padding:5px 9px!important}
+  /* el sello no debe taparle la cara a la foto */
+  [style*="top:-20px"],[style*="top: -20px"]{transform:rotate(8deg) scale(.76)!important;transform-origin:100% 0!important}
 }
 </style>
 <script src="./apolo-rig.js"></script>
