@@ -75,7 +75,22 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
   /* pills mas compactos: entran mas por fila y bajan el largo total */
   span[style*="border-radius:999px"],span[style*="border-radius: 999px"]{padding:5px 9px!important}
   /* el sello no debe taparle la cara a la foto */
-  [style*="top:-20px"],[style*="top: -20px"]{transform:rotate(8deg) scale(.76)!important;transform-origin:100% 0!important}
+  [style*="top:-20px"],[style*="top: -20px"]{transform:rotate(8deg) scale(.76)!important;transform-origin:100% 0!important;right:6px!important;top:12px!important}
+  /* sellos circulares giratorios: anclados por fuera del contenedor, en
+     pantalla chica quedaban cortados contra el borde. Adentro y mas chicos. */
+  [data-seal]{width:108px!important;height:108px!important}
+  [data-seal][style*="left:-30px"],[data-seal][style*="left: -30px"]{left:2px!important;bottom:-12px!important}
+  [data-seal][style*="right:-60px"],[data-seal][style*="right: -60px"]{right:2px!important;top:28px!important}
+
+  /* HERO en telefono: la maqueta de desktop no traduce bien.
+     1. Menos aire arriba del boton "Volver" (120px era para desktop).
+     2. La foto va primero: es lo que engancha, y en desktop iba a la
+        derecha justamente para verse junto al nombre.
+     3. El <br> de "Matias<br>Calo" existe para no invadir la foto de la
+        derecha; sin foto al lado, apilar el nombre no tiene sentido. */
+  section[data-spot]{padding-top:76px!important}
+  section[data-spot] h1 br{display:none}
+  section[data-spot] > div:last-child > div > div:last-child{order:-1}
 }
 </style>
 <script src="./apolo-rig.js"></script>
@@ -105,7 +120,7 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:38px;align-items:center">
         <div style="display:flex;flex-direction:column;gap:22px">
-          <h1 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(46px,12vw,104px);line-height:.9;letter-spacing:-.055em;text-wrap:pretty">Matías<br>Caló</h1>
+          <h1 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(46px,12vw,104px);line-height:.9;letter-spacing:-.055em;text-wrap:pretty">Matías <br>Caló</h1>
           <p style="margin:0;max-width:520px;font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(19px,4.6vw,28px);line-height:1.2;letter-spacing:-.025em;text-wrap:pretty">Producto, código e IA aplicada.<br><span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;letter-spacing:0;color:#FF3B24">Y música, video y contenido, que es de donde vengo.</span></p>
           <p style="margin:0;max-width:500px;font-size:clamp(16px,4vw,18px);line-height:1.6;color:rgba(255,255,255,.68)">23 años, Buenos Aires. Licenciatura en Negocios Digitales en la Universidad de San Andrés, y una tesis que llevé hasta un MVP funcionando: producto, UX, frontend, API, pagos e infraestructura, sin equipo a quien delegarle nada.</p>
           <div style="display:flex;flex-wrap:wrap;gap:12px">

@@ -77,7 +77,12 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
   /* pills mas compactos: entran mas por fila y bajan el largo total */
   span[style*="border-radius:999px"],span[style*="border-radius: 999px"]{padding:5px 9px!important}
   /* el sello no debe taparle la cara a la foto */
-  [style*="top:-20px"],[style*="top: -20px"]{transform:rotate(8deg) scale(.76)!important;transform-origin:100% 0!important}
+  [style*="top:-20px"],[style*="top: -20px"]{transform:rotate(8deg) scale(.76)!important;transform-origin:100% 0!important;right:-4px!important}
+  /* sellos circulares giratorios: anclados por fuera del contenedor, en
+     pantalla chica quedaban cortados contra el borde. Adentro y mas chicos. */
+  [data-seal]{width:108px!important;height:108px!important}
+  [data-seal][style*="left:-30px"],[data-seal][style*="left: -30px"]{left:2px!important;bottom:-12px!important}
+  [data-seal][style*="right:-60px"],[data-seal][style*="right: -60px"]{right:2px!important;top:28px!important}
 }
 </style>
 <script src="./apolo-rig.js"></script>
@@ -177,7 +182,6 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
       <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#FF3B24;border:1px solid rgba(225,6,0,.35);border-radius:999px;padding:8px 14px">01 — Qué es Appoloweb</span>
       <h2 style="margin:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(32px,8.6vw,78px);line-height:.96;letter-spacing:-.045em;text-wrap:pretty">No es una agencia que hace webs por encargo. Somos un <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;letter-spacing:-.01em;background:linear-gradient(100deg,#FF3B24,#C1121F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">product house</span>: construimos productos para resolver problemas que nos importan.</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.16)">
-        <p style="margin:0;font-size:clamp(16px,4vw,19px);line-height:1.6;color:rgba(255,255,255,.7)">Cada producto propio nace de una frustración real: algo que ya existe y funciona peor de lo que podría. Lo desarmamos, lo repensamos y lo usamos nosotros primero.</p>
         <p style="margin:0;font-size:clamp(16px,4vw,19px);line-height:1.6;font-weight:700;color:#FF3B24">Cuando el producto es tuyo, aplicamos el mismo criterio: estrategia, diseño, código — y lo que viene después del lanzamiento.</p>
       </div>
     </div>
