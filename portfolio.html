@@ -445,22 +445,6 @@ class Component extends DCLogic {
       ],
       projects: [
         {
-          title: 'Aturno',
-          year: '2025 — hoy',
-          role: 'Fundador, único desarrollador',
-          status: 'MVP iterando',
-          summary: 'Una plataforma de turnos para cualquier lugar que trabaje con turnos, especializada en centros médicos y consultorios. La llevé de la idea a un MVP desplegado: producto, UX, frontend, API, pagos e infraestructura.',
-          hard: 'El prompt se arma en cada pedido, no una vez.',
-          hardBody: 'Cuando llega un mensaje, el backend lee ese negocio de Firestore y construye el system prompt con datos en vivo: servicios con su duración real, horarios día por día y un aiPrompt que el dueño escribe. Dos consultorios con el mismo código tienen asistentes distintos.',
-          stack: ['React', 'Node.js', 'Express', 'Firebase', 'Firestore', 'MercadoPago', 'WhatsApp Business API', 'Tailwind CSS', 'Render'],
-          facts: [{ value: '1713', label: 'Assertions de test' }, { value: '35', label: 'Módulos testeados' }],
-          link: 'https://aturno.app',
-          linkLabel: 'Ver en vivo',
-          fit: 'cover',
-          shot: './assets/portfolio/aturno-landing.jpg',
-          shotAlt: 'La landing de Aturno: «Tu negocio toma turnos solo. Por tu página y por tu WhatsApp.», con los botones para probarlo gratis y ver la demo.'
-        },
-        {
           title: 'Acore',
           year: '2026 — hoy',
           role: 'Producto, diseño y desarrollo',
@@ -475,6 +459,22 @@ class Component extends DCLogic {
           fit: 'cover',
           shot: './assets/portfolio/acore-landing.jpg',
           shotAlt: 'La landing de Acore: «Nadie abandona lo que ve avanzar.» Seguí lo que quieras de cada paciente, y que te lo marque desde un link.'
+        },
+        {
+          title: 'Aturno',
+          year: '2025 — hoy',
+          role: 'Fundador, único desarrollador',
+          status: 'MVP iterando',
+          summary: 'Una plataforma de turnos para cualquier lugar que trabaje con turnos, especializada en centros médicos y consultorios. La llevé de la idea a un MVP desplegado: producto, UX, frontend, API, pagos e infraestructura.',
+          hard: 'El prompt se arma en cada pedido, no una vez.',
+          hardBody: 'Cuando llega un mensaje, el backend lee ese negocio de Firestore y construye el system prompt con datos en vivo: servicios con su duración real, horarios día por día y un aiPrompt que el dueño escribe. Dos consultorios con el mismo código tienen asistentes distintos.',
+          stack: ['React', 'Node.js', 'Express', 'Firebase', 'Firestore', 'MercadoPago', 'WhatsApp Business API', 'Tailwind CSS', 'Render'],
+          facts: [{ value: '1713', label: 'Assertions de test' }, { value: '35', label: 'Módulos testeados' }],
+          link: 'https://aturno.app',
+          linkLabel: 'Ver en vivo',
+          fit: 'cover',
+          shot: './assets/portfolio/aturno-landing.jpg',
+          shotAlt: 'La landing de Aturno: «Tu negocio toma turnos solo. Por tu página y por tu WhatsApp.», con los botones para probarlo gratis y ver la demo.'
         },
         {
           title: 'Row7',
@@ -534,8 +534,8 @@ class Component extends DCLogic {
       links: [
         { name: 'GitHub', url: 'https://github.com/Mati2108' },
         { name: 'LinkedIn', url: 'https://linkedin.com/in/matias-calo' },
-        { name: 'Aturno', url: 'https://aturno.app' },
-        { name: 'Acore', url: 'https://acore.solutions' }
+        { name: 'Acore', url: 'https://acore.solutions' },
+        { name: 'Aturno', url: 'https://aturno.app' }
       ]
     };
   }
