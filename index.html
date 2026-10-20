@@ -140,6 +140,7 @@ html.ap-rig [data-reveal]:not([data-revealed]){opacity:0}
     <div style="display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:center;max-width:620px;padding-top:12px;border-top:1px solid rgba(255,255,255,.3)">
       <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.82">Productos propios</span>
       <span style="display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em;color:#fff;opacity:.92"><span data-pulse style="width:6px;height:6px;border-radius:50%;background:#111;animation:apPulse 2.2s ease-in-out infinite"></span>Aturno</span>
+      <span style="display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em;color:#fff;opacity:.92"><span data-pulse style="width:6px;height:6px;border-radius:50%;background:#111;animation:apPulse 2.2s ease-in-out .4s infinite"></span>Acore</span>
       <span style="display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em;color:#fff;opacity:.92"><span data-pulse style="width:6px;height:6px;border-radius:50%;background:#B23A16;animation:apPulse 2.2s ease-in-out .8s infinite"></span>Row7</span>
     </div>
     <span aria-hidden="true" style="font-family:'DM Mono',monospace;font-size:30px;line-height:1;color:#fff;opacity:.82;animation:apNudge 3.4s ease-in-out infinite">↓</span>
@@ -344,8 +345,18 @@ class Component extends DCLogic {
           line: 'Gestión de turnos para centros médicos, con un asistente de WhatsApp que atiende con IA.',
           problem: 'Conseguir un turno es un caos: llamados que nadie contesta, agendas en papel y pacientes que se pierden en el camino.',
           solution: 'Una plataforma donde el consultorio ve todo en un lugar, y un asistente de WhatsApp que agenda, recuerda y reprograma solo.',
-          shot: './assets/portfolio/aturno-landing2.png',
-          shotAlt: 'La landing de Aturno, con el asistente de WhatsApp confirmando un turno.'
+          shot: './assets/portfolio/aturno-landing.jpg',
+          shotAlt: 'La landing de Aturno: «Tu negocio toma turnos solo. Por tu página y por tu WhatsApp.», con los botones para probarlo gratis y ver la demo.'
+        },
+        {
+          name: 'Acore',
+          kind: 'Producto propio · Para profesionales de la salud',
+          status: 'En prueba',
+          line: 'Un panel para que profesionales de la salud sigan a sus pacientes entre consulta y consulta.',
+          problem: 'Entre una consulta y la siguiente el paciente desaparece: lo que hizo llega por WhatsApp, si llega, y la profesional lo pasa a mano a una carpeta de Word.',
+          solution: 'Un panel con sus objetivos, métricas y una consulta guiada en tres pasos, y un link sin app ni cuenta donde el paciente marca lo que se acordó y anota su día.',
+          shot: './assets/portfolio/acore-resumen.jpg',
+          shotAlt: 'El resumen de una paciente en Acore: sus objetivos con cuántos pasos lleva, lo que anotó hoy y los seis pilares del estilo de vida.'
         },
         {
           name: 'Row7',

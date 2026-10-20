@@ -453,12 +453,28 @@ class Component extends DCLogic {
           hard: 'El prompt se arma en cada pedido, no una vez.',
           hardBody: 'Cuando llega un mensaje, el backend lee ese negocio de Firestore y construye el system prompt con datos en vivo: servicios con su duración real, horarios día por día y un aiPrompt que el dueño escribe. Dos peluquerías con el mismo código tienen asistentes distintos.',
           stack: ['React', 'Node.js', 'Express', 'Firebase', 'Firestore', 'MercadoPago', 'WhatsApp Business API', 'Tailwind CSS', 'Render'],
-          facts: [{ value: '447', label: 'Assertions de test' }, { value: '13', label: 'Módulos testeados' }],
+          facts: [{ value: '1713', label: 'Assertions de test' }, { value: '35', label: 'Módulos testeados' }],
           link: 'https://aturno.app',
           linkLabel: 'Ver en vivo',
           fit: 'cover',
-          shot: './assets/portfolio/aturno-landing2.png',
-          shotAlt: 'La landing de Aturno, con el asistente de WhatsApp confirmando un turno.'
+          shot: './assets/portfolio/aturno-landing.jpg',
+          shotAlt: 'La landing de Aturno: «Tu negocio toma turnos solo. Por tu página y por tu WhatsApp.», con los botones para probarlo gratis y ver la demo.'
+        },
+        {
+          title: 'Acore',
+          year: '2026 — hoy',
+          role: 'Producto, diseño y desarrollo',
+          status: 'En prueba',
+          summary: 'Un panel para que profesionales de la salud sigan a sus pacientes entre consulta y consulta, y un link sin app ni cuenta donde el paciente marca lo que se acordó. Diseñado con una de ellas, pantalla por pantalla.',
+          hard: 'Lo que ve el paciente es una frontera, no un filtro.',
+          hardBody: 'El link entra con un token al azar y viaja por WhatsApp: se reenvía y se filtra. Por eso lo que sale hacia el paciente se poda campo por campo, y un script recorre la app como paciente y falla si cruza algo de la profesional: sus notas, el puntaje, un objetivo oculto.',
+          stack: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Zod', 'Recharts', 'Tailwind CSS'],
+          facts: [{ value: '240', label: 'Commits' }, { value: '42', label: 'Baterías de QA' }],
+          link: 'https://acore.solutions',
+          linkLabel: 'Ver en vivo',
+          fit: 'cover',
+          shot: './assets/portfolio/acore-resumen.jpg',
+          shotAlt: 'El resumen de una paciente en Acore: sus objetivos con cuántos pasos lleva, lo que anotó hoy y los seis pilares del estilo de vida.'
         },
         {
           title: 'Row7',
@@ -518,7 +534,8 @@ class Component extends DCLogic {
       links: [
         { name: 'GitHub', url: 'https://github.com/Mati2108' },
         { name: 'LinkedIn', url: 'https://linkedin.com/in/matias-calo' },
-        { name: 'Aturno', url: 'https://aturno.app' }
+        { name: 'Aturno', url: 'https://aturno.app' },
+        { name: 'Acore', url: 'https://acore.solutions' }
       ]
     };
   }
